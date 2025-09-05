@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
@@ -95,7 +96,10 @@ const Posts = () => {
         <div>
 
             {loginMessage && (
-                <p style={{ color: "red", fontWeight: "bold" }}>{loginMessage}</p>
+                <>
+                    <p style={{ color: "red", fontWeight: "bold" }}>{loginMessage}</p>
+                    <Link to={'/login'}>Login</Link>
+                </>
             )}
 
             {errorMessage && !loginMessage && (
